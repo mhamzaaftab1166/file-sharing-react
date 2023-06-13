@@ -1,34 +1,56 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
-
-function App() {
-  const [count, setCount] = useState(0)
-
+import {
+  Box,
+  Button,
+  Grid,
+  GridItem,
+  Heading,
+  Image,
+  Text,
+} from "@chakra-ui/react";
+import aside from "../src/assets/aside.jpg";
+const App = () => {
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
-  )
-}
+    <Grid
+      templateAreas={{
+        base: `"aside"  "main"`,
+        lg: `"aside main"`,
+      }}
+      templateColumns={{
+        base: "1fr",
+        lg: "383px 1fr",
+      }}
+    >
+      <GridItem area="aside">
+        <Box display="flex">
+          <Image src={aside} bg="black" height="100vh" />
+        </Box>
+      </GridItem>
+      <GridItem area="main">
+        <Box
+          bg="black"
+          height="100vh"
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+        >
+          <Box
+            bg="white"
+            width="600px"
+            height="400px"
+            display="flex"
+            flexDirection="column"
+            alignItems="center"
+          >
+            <Heading as="h3" color="black">
+              Share With Us
+            </Heading>
+            <Text color="black">Share your secure files with us!</Text>
+            <Button colorScheme="red">Upload</Button>
+          </Box>
+        </Box>
+      </GridItem>
+    </Grid>
+  );
+};
 
-export default App
+export default App;
