@@ -1,5 +1,5 @@
 import { Box, Image } from "@chakra-ui/react";
-import aside from "../assets/aside.jpg";
+import aside from "../assets/aside2.jpg";
 
 const SideImage = () => {
   return (
@@ -7,9 +7,15 @@ const SideImage = () => {
       display="flex"
       alignItems="center"
       justifyContent="center"
-      height="100%"
+      height={{ base: "50vh", lg: "100%" }}
     >
-      <Image src={aside} bg="black" height="100%" objectFit="cover" />
+      <Image
+        src={aside}
+        bg="black"
+        height="100%"
+        width={{ base: "100%", lg: "auto" }}
+        objectFit="cover"
+      />
     </Box>
   );
 };

@@ -22,26 +22,37 @@ const FileComponent = () => {
 
   return (
     <Box
-      bg="black"
-      height="100%"
+      bg="white"
+      height="100vh" // Set height to 100vh (100% of viewport height)
       display="flex"
       alignItems="center"
       justifyContent="center"
     >
       <Box
-        bg="white"
+        bg="#2b47fc"
         width="90%"
         maxWidth="600px"
         height="400px"
         display="flex"
         flexDirection="column"
         alignItems="center"
+        justifyContent="center"
+        borderRadius={10}
       >
-        <Heading as="h3" color="black">
+        <Heading as="h3" color="whitw">
           Share With Us
         </Heading>
-        <Text color="black">Share your secure files with us!</Text>
-        <Button bg="black" color="gray.500" onClick={() => onClickInput()}>
+        <Text marginTop={2} color="white">
+          Share your secure files with us!
+        </Text>
+        <Button
+          bg="#4299E1"
+          color="white"
+          _hover={{ bg: "#3182CE" }}
+          _active={{ bg: "#2C5282" }}
+          onClick={() => onClickInput()}
+          marginTop={3}
+        >
           Upload
         </Button>
         <Input
