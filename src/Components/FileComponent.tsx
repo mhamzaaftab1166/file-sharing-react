@@ -12,7 +12,6 @@ const FileComponent = () => {
     (() => {
       if (file) {
         const data = new FormData();
-        data.append("name", file.name);
         data.append("file", file);
         uploadFile(data)
           .then((res) => res.data)
